@@ -20,6 +20,12 @@ import R02 from './R02_FunctionComponent.js';
 import Props1 from './R03_Prop.js';
 import Props2 from './R04_Props2.js';
 import Props3 from './R05_Props.js';
+import 예제1번 from './R06_State1.js'; //'' "" 크게 상관없음
+import 값변경실습 from './R07_State2.js';
+import 예제2번 from './R08.State3.js';
+import 예제4번 from './R09_State4.js';
+import 예제5번 from './R10_State5.js';
+import 댓글창 from './R11_State6.js';
 function App() {
 
   return (
@@ -45,8 +51,19 @@ function App() {
       <div className="info">
             이름: 강감찬 / 나이 : 72 / 성별 : 남자
         </div>
-      */}
+      
       <Props3 num='5' name='김연정' age='40' gender='여자' phone='010-1111-2222'/>
+      */}
+
+      {/*
+      <예제1번 />
+      <값변경실습 />
+      <예제2번 init="50" step="10" />
+      <예제4번 init="40" years="1" />
+      */}
+      <예제5번/>
+      {/*      init = 처음에 시작할 숫자값 step = 몇 씩 숫자가 커지고 작아질 것인가 */}
+      <댓글창/>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-const 예제3번 = (props) => {
+const Props3 = (props) => {
     const {num, name, age, gender, phone} = props;
 
     return(
@@ -12,4 +12,4 @@ const 예제3번 = (props) => {
     )
 }
 
-export default 예제3번;
+export default Props3;
