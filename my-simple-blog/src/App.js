@@ -1,9 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './component/Header';
+import NavBar from './component/NavBar';
+import BlogHome from './component/BlogHome';
+import TicTapToe from './component/TicTapToe';
+
+
 
 function App() {
   return (
     <div className="App">
+      <Header/>
+      <NavBar/>
+      <BlogHome/>
+      <TicTapToe/>
+      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
