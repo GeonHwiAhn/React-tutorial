@@ -20,7 +20,7 @@ const GameTwoStep = () => {
         setAttempts(attempts + 1);
 
         if(userGuess === number) {
-            setMessage('권성혁 ♥ 이강욱');
+            setMessage('어 마자 정답!');
         } else if (userGuess > number) {
             setMessage('다운!');
         } else {
@@ -33,7 +33,7 @@ const GameTwoStep = () => {
     }
     return (
         <div>
-        <h1>숫자맞추기 게임2</h1>
+        <h1>숫자맞추기 게임 2단계</h1>
         <form onSubmit={handleSubmit}>
             <input type='number'
                    value={guess}

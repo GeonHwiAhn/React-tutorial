@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const Game = () => {
         // 맞출 숫자를 입력하는 guess
@@ -11,6 +12,9 @@ const Game = () => {
         const [number, setNumber] = useState(Math.floor(Math.random() * 100) +1);
         // 숫자 맞추려고 시도한 횟수 처음에는 숫자를 맞추려고 시도한 적이 없기 때문에 0
         const [attempts, setAttempts] = useState(0);
+
+        // 사용자가 정답을 확인하면 다음단계로 이동하는 버튼이 보이게 생성
+        const [isCorrect, setIsCorrect] = useState(false); //정답확인 전이라 false
 
         // 사용자가 숫자를 맞추려고 시도할 때마다 숫자를 새로 세팅해서 저장해놓기
         const handleChange = (e) => {
@@ -31,7 +35,8 @@ const Game = () => {
 
             //만약에 숫자를 맞췄다면?
             if(userGuess === number) {
-                setMessage('다음사람 마시세요. 마셔라 마셔라 마셔라 마셔라 술이들어간다 쭉쭉쭉쭉 언제까지 어깨춤을 추게할거야 내어깨를봐 탈골됐잖아 술이들어간다 쭉쭊쭊ㅉ꾸ㅉ꾸ㅉ꾸쭊쭈꾸ㅉㄲ쭈꾸ㅉ꾸ㅉㄲ');
+                setMessage('어 마자 정답!');
+                setIsCorrect(true);
             } else if (userGuess > number) {
                 setMessage('다운!');
             } else {
@@ -40,8 +45,15 @@ const Game = () => {
             //input에 작성된 값 지우기
             setGuess('');
         }
-        const handleRestart = (e) => {
-
+        const handleRestart = () => {
+            //게임을 다시 시작하기 버튼을 누르면 랜덤숫자를 다시 생성하고 
+            const newNumber = Math.floor(Math.random() * 10) +1;
+            //모든 값 초기화
+            setNumber(newNumber); //맞춰야할 숫자 새로 집어넣기
+            setAttempts(0);       //맞추기위해 시도한 횟수 0으로 초기화
+            setMessage('');       //틀렸습니다. 맞췄습니다. 표시 없애주기
+            setGuess('');         //input 안에 작성한 숫자도 모두 지워주기
+            setIsCorrect(false);  //사용자가 정답 확인 전 상태로 되돌리기
         }
     return(
         <div>
@@ -56,7 +68,18 @@ const Game = () => {
             </form>
             {/* message = 숫자를 맞췄는지 틀렸는지 확인하는 메세지 */}
             <p>{message}</p>
-            <button onClick={handleRestart}>재시작버튼</button>
+
+            {/*자바스크립트에서 제일 많이쓰는 if문은 삼항연산자
+                여기에표시한내용? true일 때 실행할 내용 : false일 때 실행할 내용
+                true나 false 에서 실행할 내용이 많으면 ()괄호로 묶어서 표현
+            */}
+
+            {isCorrect  ?  
+            (<Link to="/game-twoStep"><button>다음단계로 이동</button></Link>)   
+            :  
+            (<button onClick={handleRestart}>재시작버튼</button>) }
+
+            
         </div>
     )
 }
