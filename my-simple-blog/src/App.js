@@ -4,6 +4,7 @@ import Header from './component/Header';
 import NavBar from './component/NavBar';
 import BlogHome from './component/BlogHome';
 import TicTapToe from './component/TicTapToe';
+import Dodgegobelin from './component/Dodgegobelin';
 
 
 
@@ -14,6 +15,7 @@ function App() {
       <NavBar/>
       <BlogHome/>
       <TicTapToe/>
+      <Dodgegobelin/>
       
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
