@@ -28,9 +28,18 @@ import 예제5번 from './component/R10_State5.js';
 import 댓글창 from './component/R11_State6.js';
 import 컨텍스트1 from './component/R12_Context1.js';
 import 컨텍스트2 from './component/R13_Context2.js';
-import 컨텍스트3 from './component/R15_Context3/Parent.js';
-import 컨텍스트4 from './component/R16_Context4/최종출력공간.js';
 import 부트스트랩예제1 from './component/R14_Bootstrap.js';
+import 컨텍스트3 from './component/R15_Context3/Parent.js';
+import 멤버가입 from './component/R16_Context4/최종출력공간.js';
+import Ref예제1번 from './component/R19_useRef.js';
+import Ref예제2번 from './component/R20_userRefInput.js';
+import Ref예제3번 from './component/R21_useRefSignUp.js';
+
+//R22_useRefEx -> {RefEx as Ref예제4번}
+import {RefEx as Ref예제4번} from './component/R22_useRefEx.js';
+import 고블린피하기 from './component/R23_Dodgegobelin/Dodgegobelin.js';
+import Axios1 from './component/R25_axios_Ex1.js';
+import Axios2 from './component/R26_Axios_Ex2.js';
 
 function App() {
 
@@ -74,7 +83,14 @@ function App() {
       {/*<부트스트랩예제1/>*/}
       {/*<컨텍스트2/>*/}
       {/*<컨텍스트3/>*/}
-      <컨텍스트4/>
+      {/*<멤버가입/>*/}
+      {/*Ref예제1번/>*/}
+      {/*<Ref예제2번/>*/}
+      {/*<Ref예제3번/>*/}
+      {/*<Ref예제4번/>*/}
+      {/*<고블린피하기/>*/}
+      <Axios1/>
+      <Axios2/>
     </div>
   );
 }
