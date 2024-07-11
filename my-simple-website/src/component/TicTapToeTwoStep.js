@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './TicTapToe.css';
 const 배열랜덤섞기 = (배열) => {
@@ -19,6 +19,8 @@ const TicTapToeTwoStep = () => {
     배열랜덤섞기([...Array(20).keys()].map((n) => n + 1))
   );
 
+  const [timer, setTimer] = useState(20);
+  
   // 사용자가 클릭해야하는 다음 숫자를 나타냄
   const [nextNumber, setNextNumber] = useState(1); // 사용자가 클릭해야하는 처음 수가 1이기 때문
 
@@ -39,6 +41,17 @@ const TicTapToeTwoStep = () => {
     }
   };
 
+  useEffect(()=>{
+    let countdown;
+    if(timer>0) {//남은시간 0보다 크다면
+      countdown = setTimeout(()=>{
+        setTimer(t=>t-1);
+      },1000); //setTimeout(실행할 기능, )
+    } else if(timer<=0){
+      alert("시간초과!");
+    }
+  });
+
 
   const 재시작버튼 = () => {
     setNumbers(배열랜덤섞기([...Array(20).keys()].map((n) => n + 1))); //다시 초기 숫자 세팅
@@ -50,7 +63,8 @@ const TicTapToeTwoStep = () => {
   return (
     <div className="tictaptoe-container">
       <h1>틱탭토 2단계</h1>
-      <div className="tictaptoe-two-grid">
+      <div className='timer'>남은 시간 : {timer}초
+        <div className="tictaptoe-two-grid">
         {numbers.map((number) => (
           <button className="tictaptoe-button"
                 key={number} 
@@ -58,6 +72,7 @@ const TicTapToeTwoStep = () => {
             {number}
           </button>
         ))}
+        </div>
       </div>
       <p>{message}</p>
       {/*예를들어 수를 모두 맞추면 처음으로 이동하기 */}

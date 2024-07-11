@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./TicTapToe.css";
 /*
@@ -22,10 +22,13 @@ const TicTapToe = () => {
   // .keys() 숫자를 가지고옴
   // 어떤 숫자를 가지고 오냐면  0 => 0 + 1     1 ~ 9 까지 생성
   // 1 ~ 9 까지 생성된 수를 배열랜덤섞기를 이용해서 숫자가 담긴 그릇을 섞는 것
+
   const [numbers, setNumbers] = useState(
     배열랜덤섞기([...Array(9).keys()].map((n) => n + 1))
   );
 
+  const [timer, setTimer] = useState(10);
+  
   // 사용자가 클릭해야하는 다음 숫자를 나타냄
   const [nextNumber, setNextNumber] = useState(1); // 사용자가 클릭해야하는 처음 수가 1이기 때문
 
@@ -48,6 +51,18 @@ const TicTapToe = () => {
     }
   };
 
+  useEffect(()=>{
+    let countdown;
+    if(timer>0) {//남은시간 0보다 크다면
+      countdown = setTimeout(()=>{
+        setTimer(t=>t-1);
+      },1000); //setTimeout(실행할 기능, )
+    } else if(timer<=0){
+      alert("시간초과!");
+    }
+  });
+
+
   const 재시작버튼 = () => {
     setNumbers(배열랜덤섞기([...Array(9).keys()].map((n) => n + 1))); //다시 초기 숫자 세팅
     // 다음숫자 세팅
@@ -59,6 +74,7 @@ const TicTapToe = () => {
   return (
     <div className="tictaptoe-container">
       <h1>틱탭토</h1>
+      <div className='timer'>남은 시간 : {timer}초
       <div className="tictaptoe-grid">
         {numbers.map((number) => (
           <button
@@ -69,9 +85,10 @@ const TicTapToe = () => {
             {number}
           </button>
         ))}
+        </div>
       </div>
       <p>{message}</p>
-
+      
       <button className="restart-button" onClick={재시작버튼}>게임 재시작</button>
       {/*예를들어 수를 모두 맞출 경우에만 다음단계로 이동버튼보여주기
         다음단계로 이동 버튼이 나오기 위해서 nextNumber 숫자값이 10일 때 다음 단계로 이동 버튼이 나오게 설정
