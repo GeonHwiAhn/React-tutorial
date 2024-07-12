@@ -40,6 +40,8 @@ import {RefEx as Ref예제4번} from './component/R22_useRefEx.js';
 import 고블린피하기 from './component/R23_Dodgegobelin/Dodgegobelin.js';
 import Axios1 from './component/R25_axios_Ex1.js';
 import Axios2 from './component/R26_Axios_Ex2.js';
+import Fetch예제1번 from './component/R28_Fetch_ex.js';
+import Fetch예제2번 from './component/R29_Fetch_Ex2.js';
 
 function App() {
 
@@ -89,8 +91,11 @@ function App() {
       {/*<Ref예제3번/>*/}
       {/*<Ref예제4번/>*/}
       {/*<고블린피하기/>*/}
-      <Axios1/>
+      {/*<Axios1/>
       <Axios2/>
+      <Fetch예제1번/>
+      */}
+      <Fetch예제2번/>
     </div>
   );
 }

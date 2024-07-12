@@ -10,13 +10,13 @@ import axios from 'axios';
 //npm install axios 
 
 const Axios_Ex2 = () => {
-    const [data, setData] = useState(null); 
+    const [comment, setComment] = useState(null); 
     
     useEffect (() => {
         axios.get("https://jsonplaceholder.typicode.com/comments")
             //무사히 잘 가져왔다면 then으로 data 값 변경6+
             .then(res => {
-                setData(res.data);
+                setComment(res.comment);
             })
             //가져오는데 실패했다면 에러 보여주기
             .catch( () => {
@@ -28,12 +28,12 @@ const Axios_Ex2 = () => {
         <>
             <h1> json안에 작성된 내용 가져오기</h1>
             <ul>
-            {comments.map(comment => (
-                <li key={           }>
-                    <strong>UserID : </strong>{           } <br/>
-                    <strong>ID : </strong>{         } <br/>
-                    <strong>Title : </strong>{           } <br/>
-                    <strong>Completed : </strong>{ ? 'Yes'  : 'No'} <br/>
+            {comment.map(comment => (
+                <li key={comment.id}>
+                    <strong>UserID : </strong>{comment.id} <br/>
+                    <strong>Name : </strong>{comment.name} <br/>
+                    <strong>Email : </strong>{comment.email} <br/>
+                    <strong>Body : </strong>{comment.body} <br/>
 
                 </li>
             ))}
