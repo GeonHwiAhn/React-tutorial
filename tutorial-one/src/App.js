@@ -43,6 +43,8 @@ import Axios2 from './component/R26_Axios_Ex2.js';
 import Fetch예제1번 from './component/R28_Fetch_ex.js';
 import Fetch예제2번 from './component/R29_Fetch_Ex2.js';
 import Board from './component/R31_PagiNation/Board.js';
+import Album from './component/R31_PagiNationEx/Album.js';
+import Pagenation from './component/R31_PagiNationEx2/Board.js';
 
 function App() {
 
@@ -96,8 +98,10 @@ function App() {
       <Axios2/>
       <Fetch예제1번/>
       <Fetch예제2번/>
-      */}
       <Board/>
+      <Album/>
+      */}
+      <Pagenation/>
     </div>
   );
 }
