@@ -28,4 +28,5 @@ const 패치예제 = () => {
         </>
     )
 }
+
 export default 패치예제;
