@@ -45,6 +45,7 @@ import Fetch예제2번 from './component/R29_Fetch_Ex2.js';
 import Board from './component/R31_PagiNation/Board.js';
 import Album from './component/R31_PagiNationEx/Album.js';
 import Pagenation from './component/R31_PagiNationEx2/Board.js';
+import Profile from './component/R32_Profile.js';
 
 function App() {
 
@@ -100,8 +101,9 @@ function App() {
       <Fetch예제2번/>
       <Board/>
       <Album/>
-      */}
       <Pagenation/>
+      */}
+      <Profile/>
     </div>
   );
 }
