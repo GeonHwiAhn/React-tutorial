@@ -27,3 +27,8 @@
 .signup-container button {
   width: 100%;
 }
+
+.id-err {
+  color: red;     /*글자색 설정*/
+  font-weight: bold; /*글씨 굵기*/
+}
