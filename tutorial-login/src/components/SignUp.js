@@ -1,5 +1,10 @@
 import React, {useState} from "react";
-
+/*
+ F12를 누르고 console(콘솔) 창에서
+ error가 없는지 확인
+ 만약 error가 뜬다면 
+ 백엔드 서버와 연결이 안됐을 가능성이 높음
+*/
 
 const Signup = () => {
     const [id, setId] = useState('');
@@ -71,12 +76,12 @@ const Signup = () => {
               input값들 = {khT, khT1234};
         */
 
-        fetch("/signUp", {
+        fetch("/signup", {
             //Spring Boot Container에 @PostMapping("/signUp") 에 전달하겠다는 표시
             method : "POST", 
             
             // headers : 메일로 치면 메일주소, 메일제목처럼 초기에 어떤 것을 보내는지 설정
-            headers : {"Content-Type" : "applicaion/json"},
+            headers : {"Content-Type" : "application/json"},
             //<form> 태그에는 "Content-Type" : "applicaion/json" 기본으로 생략돼서 작성
             // Content-Type은 왜 작성해야 하는가? 
             //데이터를 전달할 때 이미지파일, 동영상 파일인지, 다중이미지파일인지 글자만 있는지 정보 전달
@@ -97,6 +102,7 @@ const Signup = () => {
                 setPw('');
                 setPwCheck('');
                 setName('');
+                //setResult('');
             } else {
                 setResult('회원가입 실패~!');
             }
