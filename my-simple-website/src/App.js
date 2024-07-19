@@ -1,14 +1,19 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Game from "./component/Game";
 import { Routes, Route } from "react-router-dom";
 import Home from "./component/Home";
-import NavBar from "./component/NavBar";
-import Header from "./component/Header";
+import NavBar from "./component/Layout/NavBar";
+import Footer from "./component/Layout/Footer";
+/*
+Module not found: Error: Can't resolve './component/Header' ==>  에러가 발생한 파일 위치 App.js에서 해당 파일 위치 찾을수없음 이라는 에러 발생
+ in 'C:\Users\user1\react-workspace\my-simple-website\src' 
+ERROR in ./src/App.js 13:0-40 ===> 에러 발생한 파일 위치
+*/
+import Header from "./component/Layout/Header";
 import GameTwoStep from "./component/GameTwoStep";
 import TodoList from "./component/TodoList";
-import TicTapToe from "./component/TicTapToe";
-import TicTapToeTwoStep from "./component/TicTapToeTwoStep";
+import TicTapToe from "./component/TicTapToe/TicTapToe.js";
+import TicTapToeTwoStep from "./component/TicTapToe/TicTapToeTwoStep.js";
 import TypingTest from "./component/TypingTest.js";
 import MovieRating from "./component/Movie/MovieGrade.js";
 
@@ -29,6 +34,7 @@ function App() {
       </Routes>
 
 
+      <Footer/>
     </div>
   );
 }
