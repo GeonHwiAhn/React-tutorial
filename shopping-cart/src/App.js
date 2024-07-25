@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>킁킁</h1>
+      <h1>킁킁이의 장바구니</h1>
       <ProductList addToCart={addToCart} />
       <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
     </div>

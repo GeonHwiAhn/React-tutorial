@@ -15,7 +15,7 @@ const ProductList = ({ addToCart }) => {
         {products.map(product => (
           <li key={product.id}>
             {product.name} - ₩{product.price}
-            <button onClick={() => addToCart(product)}>장바구니에 추가</button>
+            <button onClick={() => addToCart(product)}>+++</button>
           </li>
         ))}
       </ul>

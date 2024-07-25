@@ -10,7 +10,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
         {cartItems.map(item => (
           <li key={item.id}>
             {item.name} - ₩{item.price} x {item.quantity}
-            <button onClick={() => removeFromCart(item.id)}>Remove</button>
+            <button onClick={() => removeFromCart(item.id)}>---</button>
           </li>
         ))}
       </ul>
