@@ -5,9 +5,9 @@ import GoodsList from './component/R98_GoodsShop';
 function App() {
   return (
     <div className="App">
-      {/*
+      
       <Goods/>
-      */}
+      
       <GoodsList/>
     </div>
   );
