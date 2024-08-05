@@ -99,11 +99,11 @@ function App() {
       <Axios2/>
       <Fetch예제1번/>
       <Fetch예제2번/>
-      <Album/>
-      <Pagenation/>
-      <Profile/>
-      */}
       <Board/>
+      <Pagenation/>
+      <Album/>
+      */}
+      <Profile/>
     </div>
   );
 }
